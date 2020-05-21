@@ -87,6 +87,14 @@ var createTaskActions = function(taskId){
 };
 var taskButtonHandler=function(event){
     console.log(event.target);
+    if(event.target.matches(".delete-btn")){
+            //get elements tas id
+    var taskId=event.target.getAttribute("data-task-id");
+    deleteTask(taskId);
+    }
 };
-
-pageContentEl.addEventListener("click, taskButtonHandler");
+var deleteTask=function(taskId){
+    var taskSelected = document.querySelector(".task-item[data-task-id='"+taskId+"']");
+    taskSelected.remove();
+}
+pageContentEl.addEventListener("click", taskButtonHandler);
