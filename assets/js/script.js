@@ -60,7 +60,7 @@ var createTaskActions = function(taskId){
 
     //create delete button
     var deleteButtonEl= document.createElement('button');
-    deleteButtonEl.textcontent ="Delete";
+    deleteButtonEl.textContent ="Delete";
     deleteButtonEl.className = "btn delete-btn";
     deleteButtonEl.setAttribute("data-task-id", taskId);
 
@@ -74,7 +74,7 @@ var createTaskActions = function(taskId){
     for(var i=0; i< statusChoices.length; i++){
         //create option element
         var statusOptionEl = document.createElement("option");
-        statusOptionEl.textcontent = statusChoices[i];
+        statusOptionEl.textContent = statusChoices[i];
         statusOptionEl.setAttribute("value", statusChoices[i]);
         //append to select element
         statusSelectEl.appendChild(statusOptionEl);
