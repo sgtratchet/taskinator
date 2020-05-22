@@ -262,10 +262,26 @@ var dragLeaveHandler = function(event) {
 };
 var saveTasks = function() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
+  };
+
+
 pageContentEl.addEventListener("click", taskButtonHandler);
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
 pageContentEl.addEventListener("dragstart", dragTaskHandler);
 pageContentEl.addEventListener("dragover", dropZoneDragHandler);
 pageContentEl.addEventListener("drop", dropTaskHandler);
 pageContentEl.addEventListener("dragleave", dragLeaveHandler);
+
+var loadTasks=function(){
+    //get task from localStorage
+    localStorage.getItem(tasks);
+    //convert task from stringified into array
+    if (tasks === null){
+        tasks.push();
+        return false; 
+    }
+    tasks = JSON.parse(tasks);
+    console.log(loadTasks);
+    //create task elements on page from new array
+console.log(tasks);
+};
