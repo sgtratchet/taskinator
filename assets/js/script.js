@@ -207,6 +207,12 @@ var dragLeaveHandler = function(event) {
         taskListEl.removeAttribute("style");
     }
 }
+var taskDataObj={
+  id: 1,
+  name: "Add localStorage persistence",
+  type: "Web",
+  status: "in progress"
+}
 
 pageContentEl.addEventListener("click", taskButtonHandler);
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
